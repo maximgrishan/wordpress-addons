@@ -1,0 +1,29 @@
+.elementor-image-hotspot-box-wrapper .elementor-image-box-title a,
+.elementor-image-hotspot-box-wrapper .elementor-image-box-title a {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    word-spacing: inherit;
+}
+
+.elementor-image-hotspot-box-wrapper .elementor-image-box-content {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    margin: -50px 20px 0 20px;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.fancybox-people__content .fancybox-people__position {
+    display: flex;
+    margin-bottom: 20px;
+    color: #99a2ab;
+}
+
+.fancybox-people__content .fancybox-people__title {
+    margin-bottom: 5px;
+}
