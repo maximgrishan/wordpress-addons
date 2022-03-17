@@ -73,7 +73,7 @@ Thumbs.db
 !.gitignore
 !.editorconfig
 !.phpcs.xml.dist
-!README.md
+README.md
 !CHANGELOG.md
 !composer.json
 
