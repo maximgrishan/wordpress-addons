@@ -23,27 +23,15 @@ class Product_Attributes extends \Elementor\Core\DynamicTags\Tag {
     }
 
     protected function register_controls() {
-	    $product_id = get_queried_object_id();
-
-	    $product = wc_get_product( $product_id );
-	    if ( ! $product ) return;
-
-	    $attributes = $product->get_attributes();
+	    $attributes = wc_get_attribute_taxonomy_labels();
 	    if ( ! $attributes ) return;
-
-        $options = [];
-
-	    foreach ( $attributes as $attribute ) {
-	    	$slug = $attribute['name'];
-            $options[$slug] = wc_attribute_label( $attribute['name'] );
-        }
 
         $this->add_control(
             'attributes',
             [
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'label' => esc_html__( 'Attribute', 'elementor-pro' ),
-                'options' => $options,
+                'options' => $attributes,
             ]
         );
     }
