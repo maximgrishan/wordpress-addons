@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Elementor Woocommerce Dynamic Tag
  * Description: Add dynamic tag that returns an Woocommerce data.
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -11,8 +11,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function register_woocommerce_dynamic_tag( $dynamic_tags_manager ) {
 
-	require_once( __DIR__ . '/dynamic-tags/woocommerce-dynamic-tag.php' );
-	$dynamic_tags_manager->register( new \Product_Attributes );
+	if ( class_exists( 'woocommerce' ) ) {
+		// Check Woocommerce plugin exists
+		require_once( __DIR__ . '/dynamic-tags/woocommerce-dynamic-tag.php' );
+		$dynamic_tags_manager->register( new \Product_Attributes );
+	}
+
+	if ( class_exists('acf') ) {
+		// Check ACF plugin exists
+		require_once( __DIR__ . '/dynamic-tags/woocommerce-product-acf-dynamic-tag.php' );
+		$dynamic_tags_manager->register( new \Product_ACF );
+	}
 
 }
 
